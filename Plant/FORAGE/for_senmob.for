@@ -45,7 +45,7 @@ C-----------------------------------------------------------------------
       
       CHARACTER*1 ISWWAT
       CHARACTER*6  ERRKEY, SECTION
-      CHARACTER*80 CHAR
+      CHARACTER*255 CHAR
       CHARACTER*92 FILECC
       CHARACTER*3 TYPLMOB, TYPNMOB 
 

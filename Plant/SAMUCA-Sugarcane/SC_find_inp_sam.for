@@ -31,9 +31,9 @@ c         Planting method
        !chp   CHARACTER*92    FILECC
           CHARACTER*12    FILES
           CHARACTER*12    FILEE 
-          CHARACTER*80    PATHCR 
-          CHARACTER*80    PATHSR
-          CHARACTER*80    PATHER 
+          CHARACTER*255    PATHCR 
+          CHARACTER*255    PATHSR
+          CHARACTER*255    PATHER 
 
           REAL PLTPOP,ROWSPC, plantdepth !, dummy
           CHARACTER*6     SECTION 

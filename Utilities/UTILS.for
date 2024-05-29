@@ -1292,8 +1292,8 @@ C=======================================================================
       CHARACTER*6  ERRKEY
       CHARACTER*10 FILECDE
       CHARACTER*78 MSG(2)
-      CHARACTER*80 CHARTEST
-      CHARACTER*120 DATAX, PATHX
+      CHARACTER*255 CHARTEST
+      CHARACTER*255 DATAX, PATHX
       CHARACTER(len=255) :: DSSAT_HOME
 
       INTEGER ERR, I, ISECT, LNUM, LUN

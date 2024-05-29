@@ -35,6 +35,15 @@ declarations_to_replace = [
   /CHARACTER\*12\s+SOMFILE/,
   /CHARACTER\*92\s+SOMPF/,
   /CHARACTER\*\s*80\s+PATHWTC,\s+PATHWTG,\s+PATHWTW,\s+WPath/,
+  /CHARACTER\*\s*120\s+INPUTX/,
+  /CHARACTER\*\s*120\s+INPUTX,\s+FILECTL/,
+  /CHARACTER\*\s*120\s+FILECTL/,
+  /CHARACTER\*\s*120\s+PATHX/,
+  /CHARACTER\*\s*120\s+DATAX/,
+  /CHARACTER\*\s*120\s+LINE/,  
+  /CHARACTER\*\s*92\s+FILEWW/,
+  /CHARACTER\*\s*92\s+FileW/,
+  /CHARACTER\*\s*120\s+WTHSTR/
 ]
 
 # Iterate over all files in the directory with the specified extensions
@@ -47,11 +56,21 @@ Dir['./**/*.{for,f90,f,blk}'].each do |file|
   end
   content.gsub!('\'(A80)\'', '\'(A255)\'')
   content.gsub!('(1:80)', '(1:255)')
+  content.gsub!('WTHSTR(1:120)', 'WTHSTR(1:255)')
+
   content.gsub!(/CHARACTER\s*\(LEN=80\)/, 'CHARACTER (LEN=255)')
   content.gsub!(/CHARACTER\s*\(len=80\)/, 'CHARACTER (len=255)')
+  content.gsub!(/CHARACTER\s*\(LEN=120\)/, 'CHARACTER (LEN=255)')
   content.gsub!('(PATHL .LT. 80)', '(PATHL .LT. 255)')
   content.gsub!('(PATHL+1),80', '(PATHL+1),255')
-
+  content.gsub!('CHARACTER(len=92)  SOILNF', 'CHARACTER(len=255)  SOILNF')
+  content.gsub!('CHARACTER(len=12)  FILESS, NAMEF', 'CHARACTER(len=255)  FILESS, NAMEF')
+  
+  content.gsub!('CHARACTER*120 DATAX, PATHX', 'CHARACTER*255 DATAX, PATHX')
+  content.gsub!('CHARACTER*200 FILESPE, TEXTLINE', 'CHARACTER*255 FILESPE, TEXTLINE')
+  content.gsub!('CHARACTER*120 FILECTL, WTHSTR', 'CHARACTER*255 FILECTL, WTHSTR')
+  content.gsub!('CHARACTER*120 WTHSTR, FILECTL', 'CHARACTER*255 WTHSTR, FILECTL')
+  
   # Write the modified content back to the file
   File.write(file, content, :encoding => 'ASCII-8BIT')
 end

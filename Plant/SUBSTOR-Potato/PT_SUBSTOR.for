@@ -346,7 +346,7 @@ C-----------------------------------------------------------------------
       CHARACTER*4   C4
       CHARACTER*12  FILEC
       CHARACTER*30  FILEIO
-      CHARACTER*80  PATHCR
+      CHARACTER*255  PATHCR
       CHARACTER*92  FILECC
       CHARACTER*180 CHAR
 

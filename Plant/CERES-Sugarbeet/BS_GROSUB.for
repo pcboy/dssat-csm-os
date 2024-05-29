@@ -62,7 +62,7 @@
       REAL        ASMDOT
       REAL        BIOMAS 
       REAL        BSGDD
-      CHARACTER*80 C80
+      CHARACTER*255 C80
       REAL        CANHT     
 !**
       REAL        CANHT_POT !added 26May04 RS     
@@ -176,9 +176,9 @@
       REAL        P5          
       REAL        PAR         
       REAL        PARSR
-      CHARACTER*80    PATHCR 
-      CHARACTER*80    PATHSR
-      CHARACTER*80    PATHER 
+      CHARACTER*255    PATHCR 
+      CHARACTER*255    PATHSR
+      CHARACTER*255    PATHER 
       REAL        PC          
       REAL        PCARB
       REAL        PCNGRN
